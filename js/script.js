@@ -30,3 +30,26 @@ console.log(favoriteSubjectSentence);
 
 
 console.log("Well, it was nice to talk to you. Have a nice day!");
+
+
+day 2 
+
+
+console.log("Hello! I'm your coding fun fact guide!");
+
+let botName ="YAGIbot";
+let botLocation ="YAGISpc";
+let favoriteLanguage ="swift";
+
+console.log("My name is " + botName + " and I live on " +botLocation+".")// la rpm aca perdi como una hora y el error era un cagado espacion al lado de las comillas
+console.log("My favorite programming language is " + favoriteLanguage + ".");
+
+let codingFact = "s"; 
+codingFact= "His favorite programming is "+favoriteLanguage + ".";
+console.log(codingFact);
+codingFact = "He enjoys coding in " + favoriteLanguage + ".";
+console.log(codingFact);
+codingFact = favoriteLanguage + " is his top choice for programming.";
+console.log(codingFact);
+
+console.log("It was fun sharing these facts with you. Goodbye! - " +botName + " from " +botLocation+  ".");
