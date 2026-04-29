@@ -53,3 +53,28 @@ codingFact = favoriteLanguage + " is his top choice for programming.";
 console.log(codingFact);
 
 console.log("It was fun sharing these facts with you. Goodbye! - " +botName + " from " +botLocation+  ".");
+
+
+let adjective ="cranky";
+let noun="dildo";
+let verb="buzzes";
+let place="home";
+let adjective2="sticky"
+let noun2="phone";
+let firstStory = "Once upon a time, there was a(n) " + adjective + " " + noun + " who loved to eat " + noun2 + ". The " + noun + " lived in a " + place + " and had " + adjective2 + " nostrils that blew fire when it was " + verb + ".";  //aca mi error fue no haber colocado comillas y espacion entre adjetivo y noun
+
+console.log("First story: " + firstStory);
+
+// Nuevos valores
+adjective = "brave";
+noun = "knight";
+verb = "running";
+place = "castle";
+adjective2 = "fiery";
+noun2 = "apples";
+
+// Segunda historia
+let secondStory = "Once upon a time, there was a(n) " + adjective + " " + noun + " who loved to eat " + noun2 + ". The " + noun + " lived in a " + place + " and had " + adjective2 + " nostrils that blew fire when it was " + verb + ".";
+
+// Mostrar en consola
+console.log("Second story: " + secondStory);
