@@ -191,4 +191,4 @@ console.log(camelCasedVersion);
 
 const originalString = "I love cats.";
 console.log("Original string:");
-console.log(originalString); day 3 sdfa
+console.log(originalString); day 3 sdfa bgjhtgjbvnbfgh
