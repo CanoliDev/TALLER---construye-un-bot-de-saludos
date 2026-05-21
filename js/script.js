@@ -361,3 +361,10 @@ if (randomNumber === 1) {
 }
 
 console.log(selectedFortune)
+
+
+
+
+
+
+console.log("oil day 21 morrow ill study 2ble");
