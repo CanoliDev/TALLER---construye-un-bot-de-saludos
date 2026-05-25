@@ -122,6 +122,7 @@ console.log(learningIsFunSentence.indexOf("fun"));
 console.log(learningIsFunSentence.indexOf("learning"));
 
 
+_____________________________________________________________________________________________________________________________________________________________________
 console.log("I hope you enjoyed learning today.");
 
 const fccSentence = "freeCodeCamp is a great place to learn web development.";
@@ -142,6 +143,7 @@ const message = "Welcome to freeCodeCamp!";
 console.log("Here are some examples of the slice() method:");
 
 
+_____________________________________________________________________________________________________________________________________________________________________
 [11:57, 2/5/2026] Abuelo Humber: const fccSentence = "freeCodeCamp is a great place to learn web development.";
 
 console.log("Here are some examples of the includes() method:");
@@ -189,6 +191,7 @@ console.log("Camel cased version:");
 console.log(camelCasedVersion);
 
 
+_____________________________________________________________________________________________________________________________________________________________________
 const originalString = "I love cats.";
 console.log("Original string:");
 console.log(originalString);
@@ -216,6 +219,7 @@ const newSentence = `I ${repeatedLove} learning.`;
 console.log(newSentence);
 
 
+_____________________________________________________________________________________________________________________________________________________________________
 const firstResult = 10 + 5;
 console.log(`5 + 10 = ${firstResult}`);
 
@@ -277,13 +281,7 @@ if (timmyAge >= 16) {
   console.log("Timmy is not old enough to drive.");
 }
 
-
-
-
-
-
-
-
+_____________________________________________________________________________________________________________________________________________________________________
 const botName = "MathBot";
 const greeting = `Hi there! My name is ${botName} and I am here to teach you about the Math object!`;
 
@@ -335,9 +333,7 @@ console.log(minNum);
 
 console.log("It was fun learning about the different Math methods with you!");
 
-
-
-
+______________________________________________________________________________________________________________________________________________________________________________
 const fortune1 = "Your cat will look very cuddly today.";
 const fortune2 = "The weather will be nice tomorrow.";
 const fortune3 = "Be cautious of your new neighbors.";
@@ -362,12 +358,136 @@ if (randomNumber === 1) {
 
 console.log(selectedFortune)
 
+console.log("oil day 21 morrow ill study 2ble   done ");
+______________________________________________________________________________________________________________________________________________________________________________
+
+function calculateSum(num1, num2) {
+  return num1 + num2;
+}
+
+console.log(calculateSum(2, 5));
+console.log(calculateSum(10, 10));
+console.log(calculateSum(5, 5));
+
+function calculateDifference(num1, num2) {
+  return num1 - num2;
+}
+
+console.log(calculateDifference(22, 5));
+console.log(calculateDifference(12, 1));
+console.log(calculateDifference(17, 9));
+
+function calculateProduct(num1, num2) {
+  return num1 * num2;
+}
+
+console.log(calculateProduct(13, 5));
 
 
+function calculateQuotient(num1, num2) {
+  return num2 === 0 ? "Error: Division by zero" : num1 / num2;
+}
+
+console.log(calculateQuotient(7, 11));
+console.log(calculateQuotient(3, 0));
+
+function calculateSquare(num) {
+  return num ** 2;
+}
+
+console.log(calculateSquare(2));
+console.log(calculateSquare(9));
+
+function calculateSquareRoot(num) {
+  return Math.sqrt(num);
+}
+
+console.log(calculateSquareRoot(25));
+console.log(calculateSquareRoot(100));
+
+______________________________________________________________________________________________________________________________________________________________________________
+
+function booWho(arg) {
+  // typeof devuelve el tipo de dato de arg como string
+  // ej: typeof true    → "boolean"
+  // ej: typeof 42      → "number"
+  // ej: typeof "hola"  → "string"
+  // ej: typeof null    → "object"
+
+  // === "boolean" compara si el tipo es exactamente "boolean"
+  // si arg es true o false → devuelve true
+  // si arg es cualquier otra cosa → devuelve false
+
+  // El return devuelve directamente el resultado de la comparación
+  // no necesita if/else porque === ya devuelve true o false
+  return typeof arg === "boolean";
+}
+
+// Ejemplos:
+console.log(booWho(true));    // true  ✅ es boolean
+console.log(booWho(false));   // true  ✅ es boolean
+console.log(booWho(42));      // false ❌ es number
+console.log(booWho("true"));  // false ❌ es string
+console.log(booWho(null));    // false ❌ es object
+}
+______________________________________________________________________________________________________________________________________________________________________________
 
 
+let email = "usuario@gmail.com";
 
+function maskEmail(email) {
 
+  // indexOf("@") recorre el string buscando el carácter "@" y devuelve su posición numérica.
+  // Lo necesitamos porque no sabemos qué tan largo es el nombre de usuario,
+  // puede tener 5 o 20 caracteres. Se calcula dinámicamente cada vez que la función corre.
+  // ej: "apple.pie@example.com" → atIndex = 9
+  // ej: "freecodecamp@example.com" → atIndex = 12
+  const atIndex = email.indexOf("@");
 
+  // Los strings en JS funcionan como arrays, cada carácter tiene un índice.
+  // [0] siempre es el primero.
+  // Lo guardamos porque el ejercicio pide conservar el primer carácter visible.
+  // ej: "apple.pie@example.com" → first = "a"
+  const first = email[0];
 
-console.log("oil day 21 morrow ill study 2ble   dopne ");
+  // atIndex es donde está el "@", entonces atIndex - 1 es el carácter justo antes,
+  // es decir el último del nombre de usuario.
+  // Lo guardamos porque el ejercicio pide conservar el último carácter visible.
+  // ej: "apple.pie@example.com" → email[8] → last = "e"
+  const last = email[atIndex - 1];
+
+  // repeat() repite un string N veces.
+  // atIndex es el total de caracteres del nombre de usuario.
+  // Restamos 2 porque ya tomamos el primero y el último,
+  // entonces quedan atIndex - 2 caracteres para enmascarar con "*".
+  // Si usáramos solo atIndex sin restar 2, incluiríamos el primero y el último
+  // también, rompiendo el formato esperado.
+  // ej: atIndex = 9 → repeat(7) → "*******"
+  const masked = "*".repeat(atIndex - 2);
+
+  // slice(atIndex) corta el string desde la posición del "@" hasta el final,
+  // devolviendo el dominio completo incluyendo el "@".
+  // ej: "apple.pie@example.com" → "@example.com"
+  // El operador "+" concatena los strings uno tras otro en orden:
+  // first + masked + last + dominio
+  // ej: "a" + "*******" + "e" + "@example.com" = "a*******e@example.com" ✅
+  return first + masked + last + email.slice(atIndex);
+}
+
+console.log(maskEmail(email));
+console.log(maskEmail("apple.pie@example.com"));    // "a*******e@example.com"
+console.log(maskEmail("freecodecamp@example.com")); // "f**********p@example.com"
+
+let email = "usuario@gmail.com";
+
+function maskEmail(email) {
+  const atIndex = email.indexOf("@");
+  const first = email[0];
+  const last = email[atIndex - 1];
+  const masked = "*".repeat(atIndex - 2);
+  return first + masked + last + email.slice(atIndex);
+}
+
+console.log(maskEmail(email));
+console.log(maskEmail("apple.pie@example.com"));
+console.log(maskEmail("freecodecamp@example.com"));
