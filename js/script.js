@@ -533,4 +533,232 @@ console.log(noLoanMsg
 
 ___________________________________________________________________________________________________________________________________________________________________________
 
+let count = 0;
 
+function cardCounter(card) {
+  if (card >= 2 && card <= 6) {
+    count++;
+  } else if (card === 10 || card === "J" || card === "Q" || card === "K" || card === "A") {
+    count--;
+  }
+
+  if (count > 0) {
+    return `${count} Bet`;
+  } else {
+    return `${count} Hold`;
+  }
+}
+let count = 0;
+// Variable global inicializada en 0.
+// "global" significa que existe fuera de la función
+// y puede ser modificada desde dentro de ella.
+
+function cardCounter(card) {
+
+  // Cartas 2-6 suman 1 al count.
+  // card >= 2 && card <= 6 verifica que el número esté en ese rango.
+  // count++ es postfijo, incrementa count en 1 después de evaluarlo.
+  if (card >= 2 && card <= 6) {
+    count++;
+
+  // Cartas 10, J, Q, K, A restan 1 al count.
+  // Se usan === porque los valores son exactos, no rangos.
+  // Las letras van entre comillas porque son strings, no números.
+  // count-- es postfijo, decrementa count en 1 después de evaluarlo.
+  } else if (card === 10 || card === "J" || card === "Q" || card === "K" || card === "A") {
+    count--;
+  }
+  // Cartas 7, 8, 9 no entran en ningún if,
+  // por lo que count no se modifica. Se ignoran.
+
+  // Si count es positivo (mayor que 0) → devuelve count + "Bet"
+  // Si count es 0 o negativo → devuelve count + "Hold"
+  // El template literal ${count} inserta el valor actual de count en el string.
+  // El espacio entre ${count} y Bet/Hold es el separador requerido. ej: "3 Bet", "-1 Hold"
+  if (count > 0) {
+    return `${count} Bet`;
+  } else {
+    return `${count} Hold`;
+  }
+}
+
+/* 
+javascriptlet count = 0;
+let permite que count sea modificada dentro de la función. 
+const no funcionaría porque su valor cambia. Es global porque está declarada 
+fuera de la función, lo que permite que cardCounter la lea y modifique.*/
+
+javascriptif (card >= 2 && card <= 6) {
+  count++;
+}
+/*
+>= y <= verifican que card esté dentro del rango 2-6 inclusive. && exige que 
+ambas condiciones sean true al mismo tiempo. count++ es postfijo,
+ incrementa count en 1 después de usarlo en esa línea.
+*/
+
+javascript} else if (card === 10 || card === "J" || card === "Q" 
+|| card === "K" || card === "A") {
+  count--;
+}
+/*
+=== compara valor y tipo, necesario porque "J", "Q", "K", "A" 
+son strings y 10 es número. || significa que basta con que una condición 
+sea true para ejecutar el bloque. count-- decrementa count en 1. Las cartas
+ 7, 8, 9 no entran en ningún if, por lo que count no cambia. */
+
+javascriptif (count > 0) {
+  return `${count} Bet`;
+} else {
+  return `${count} Hold`;
+}
+/* 
+Después de modificar count, se evalúa su valor actual. Si es
+ positivo devuelve "Bet", si es 0 o negativo devuelve "Hold". El template 
+ literal ` ` con ${} inserta el valor de count directamente en el string, 
+ separado por un espacio de Bet o Hold, cumpliendo el formato -3 Hold o 2 Bet.
+¿Deseas explicación adicional?*/
+
+
+
+___________________________________________________________________________________________________________________________________________________________________________
+
+let year = 2024;
+
+function isLeapYear(year) {
+  if (year % 400 === 0) {
+    return `${year} is a leap year.`;
+  } else if (year % 100 === 0) {
+    return `${year} is not a leap year.`;
+  } else if (year % 4 === 0) {
+    return `${year} is a leap year.`;
+  } else {
+    return `${year} is not a leap year.`;
+  }
+}
+
+const result = isLeapYear(year);
+console.log(result);
+
+
+let year = 2024;
+/* 
+Se declara year fuera de la función para que sea global
+y pueda pasarse como argumento a isLeapYear.
+Se usa let porque su valor puede cambiar si se quiere
+probar con otro año.
+*/
+
+function isLeapYear(year) {
+/*
+La función recibe year como parámetro. Aunque existe una
+variable global year, este parámetro es independiente y
+solo vive dentro de la función.
+*/
+
+  if (year % 400 === 0) {
+    return `${year} is a leap year.`;
+  }
+  /*
+  % es el operador módulo, devuelve el residuo de la división.
+  Si year % 400 === 0 significa que el año es divisible
+  exactamente por 400, lo que lo hace bisiesto sin excepción.
+  Ej: 2000 % 400 = 0 → bisiesto.
+  */
+
+  else if (year % 100 === 0) {
+    return `${year} is not a leap year.`;
+  }
+  /*
+  Si llega aquí, no es divisible por 400 pero sí por 100.
+  Los años divisibles por 100 pero no por 400 NO son bisiestos.
+  Ej: 1900 % 100 = 0 pero 1900 % 400 ≠ 0 → no bisiesto.
+  */
+
+  else if (year % 4 === 0) {
+    return `${year} is a leap year.`;
+  }
+  /*
+  Si llega aquí, no es divisible por 100 ni por 400.
+  Si es divisible por 4, entonces sí es bisiesto.
+  Ej: 2024 % 4 = 0 → bisiesto.
+  */
+
+  else {
+    return `${year} is not a leap year.`;
+  }
+  /*
+  Si no cumple ninguna condición anterior,
+  el año no es bisiesto.
+  Ej: 2023 % 4 ≠ 0 → no bisiesto.
+  */
+}
+
+const result = isLeapYear(year);
+/*
+Se llama la función con year como argumento y el valor
+retornado se guarda en result. Se usa const porque
+result no cambiará después de ser asignado.
+*/
+
+console.log(result);
+/*
+Muestra en consola el string retornado por isLeapYear.
+Ej: "2024 is a leap year."
+*/
+
+___________________________________________________________________________________________________________________________________________________________________________
+
+
+function truncateString(str, num) {
+  if (str.length > num) {
+    return str.slice(0, num) + "...";
+  } else {
+    return str;
+  }
+
+
+
+}function truncateString(str, num) {
+/*
+La función recibe dos parámetros:
+str → la cadena que se desea truncar.
+num → el número máximo de caracteres permitidos.
+*/
+
+  if (str.length > num) {
+/*
+str.length devuelve el número total de caracteres del string.
+Si es mayor que num, el string necesita ser truncado.
+Ej: "Hello World".length = 11, num = 5 → 11 > 5 → truncar.
+*/
+
+    return str.slice(0, num) + "...";
+/*
+slice(0, num) corta el string desde el índice 0 hasta num (sin incluirlo),
+devolviendo solo los primeros num caracteres.
+Ej: "Hello World".slice(0, 5) → "Hello"
+El operador + concatena "..." al final del string truncado.
+Resultado: "Hello..."
+*/
+
+  } else {
+    return str;
+/*
+Si str.length es igual o menor que num, el string
+se devuelve sin ningún cambio.
+Ej: "Hi".length = 2, num = 5 → 2 <= 5 → devuelve "Hi"
+*/
+  }
+}
+___________________________________________________________________________________________________________________________________________________________________________
+
+
+
+function truncateString(str, num) {
+  if (str.length > num) {
+    return str.slice(0, num) + "...";
+  } else {
+    return str;
+  }
+}
