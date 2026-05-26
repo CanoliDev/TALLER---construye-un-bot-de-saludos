@@ -753,12 +753,65 @@ Ej: "Hi".length = 2, num = 5 → 2 <= 5 → devuelve "Hi"
 }
 ___________________________________________________________________________________________________________________________________________________________________________
 
-
-
-function truncateString(str, num) {
-  if (str.length > num) {
-    return str.slice(0, num) + "...";
-  } else {
-    return str;
-  }
+function confirmEnding(str, target) {
+  return str.slice(str.length - target.length) === target;
 }
+
+
+___________________________________________________________________________________________________________________________________________________________________________
+
+c3 stp 36
+
+function confirmEnding(str, target) {
+  return str.slice(str.length - target.length) === target;
+}
+
+function confirmEnding(str, target) {
+/*
+La función recibe dos parámetros:
+str → la cadena principal que se desea verificar.
+target → la cadena con la que se comprueba si str termina.
+*/
+
+  return str.slice(str.length - target.length) === target;
+/*
+str.length → número total de caracteres de str.
+target.length → número total de caracteres de target.
+str.length - target.length → índice donde empieza el final de str
+con la misma longitud que target.
+Ej: str = "Bastian", target = "ian"
+str.length = 7, target.length = 3
+7 - 3 = 4 → slice empieza en índice 4
+str.slice(4) → "ian"
+"ian" === "ian" → true ✅
+
+Si target no coincide con el final:
+str = "Bastian", target = "abc"
+str.slice(4) → "ian"
+"ian" === "abc" → false ❌
+*/
+}
+
+___________________________________________________________________________________________________________________________________________________________________________
+
+c4 stp 10 d 34
+
+console.log("Grocery shopping list");
+
+const shoppingList = [];
+
+console.log("It will be nice to have some fruit to eat.");
+
+shoppingList.push("Apples");
+function getShoppingListMsg(arr) {
+  return `Current Shopping List: ${arr}`;
+}
+
+console.log(getShoppingListMsg(shoppingList));
+
+shoppingList.push("Grapes");
+console.log(getShoppingListMsg(shoppingList));
+
+console.log("It looks like we need to get some cooking oil.");
+
+shoppingList.unshift("Vegetable Oil");
