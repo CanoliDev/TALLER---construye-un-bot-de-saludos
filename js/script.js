@@ -794,7 +794,7 @@ str.slice(4) → "ian"
 
 ___________________________________________________________________________________________________________________________________________________________________________
 
-c4 stp 10 d 34
+c4 stp 25 d 34
 
 console.log("Grocery shopping list");
 
@@ -815,3 +815,336 @@ console.log(getShoppingListMsg(shoppingList));
 console.log("It looks like we need to get some cooking oil.");
 
 shoppingList.unshift("Vegetable Oil");
+console.log(getShoppingListMsg(shoppingList));
+
+shoppingList.push("Popcorn", "Beef Jerky", "Potato Chips");
+console.log(getShoppingListMsg(shoppingList));
+
+console.log("This looks like too much junk food.");
+
+shoppingList.pop();
+console.log(getShoppingListMsg(shoppingList));
+
+console.log("It might be nice to get a dessert.");
+
+shoppingList.unshift("Chocolate Cake");
+console.log(getShoppingListMsg(shoppingList));
+
+console.log("On second thought, maybe we should be more health conscious.");
+
+shoppingList.shift();
+shoppingList[0] = "Canola Oil";
+
+console.log(getShoppingListMsg(shoppingList));
+
+const shoppingList = [];
+/*
+Se declara un array vacío con const. Se usa const porque la variable
+shoppingList siempre apuntará al mismo array, aunque su contenido cambie.
+*/
+
+shoppingList.push("Apples");
+/*
+push() agrega un elemento al final del array.
+shoppingList → ["Apples"]
+*/
+
+function getShoppingListMsg(arr) {
+  return `Current Shopping List: ${arr}`;
+}
+/*
+Función que recibe el array como argumento y devuelve un string
+con el contenido actual del array usando template literal.
+Cuando un array se inserta en un template literal, JS lo convierte
+automáticamente a string separando los elementos con comas.
+*/
+
+shoppingList.push("Grapes");
+/*
+push() agrega "Grapes" al final del array.
+shoppingList → ["Apples", "Grapes"]
+*/
+
+shoppingList.unshift("Vegetable Oil");
+/*
+unshift() agrega un elemento al inicio del array.
+shoppingList → ["Vegetable Oil", "Apples", "Grapes"]
+*/
+
+shoppingList.push("Popcorn", "Beef Jerky", "Potato Chips");
+/*
+push() puede recibir múltiples argumentos y los agrega todos al final.
+shoppingList → ["Vegetable Oil", "Apples", "Grapes", "Popcorn", "Beef Jerky", "Potato Chips"]
+*/
+
+shoppingList.pop();
+/*
+pop() elimina el último elemento del array.
+shoppingList → ["Vegetable Oil", "Apples", "Grapes", "Popcorn", "Beef Jerky"]
+*/
+
+shoppingList.unshift("Chocolate Cake");
+/*
+unshift() agrega "Chocolate Cake" al inicio del array.
+shoppingList → ["Chocolate Cake", "Vegetable Oil", "Apples", "Grapes", "Popcorn", "Beef Jerky"]
+*/
+
+shoppingList.shift();
+/*
+shift() elimina el primer elemento del array.
+shoppingList → ["Vegetable Oil", "Apples", "Grapes", "Popcorn", "Beef Jerky"]
+*/
+
+shoppingList[0] = "Canola Oil";
+/*
+[0] accede al índice 0 del array (primer elemento) y lo reemplaza.
+shoppingList → ["Canola Oil", "Apples", "Grapes", "Popcorn", "Beef Jerky"]
+*/
+
+console.log(getShoppingListMsg(shoppingList));
+/*
+Llama la función con el array final como argumento y muestra
+el resultado en consola.
+*/
+
+___________________________________________________________________________________________________________________________________________________________________________
+
+___________________________________________________________________________________________________________________________________________________________________________
+c4 stp 26 d 34
+
+___________________________________________________________________________________________________________________________________________________________________________
+
+let lunches = [];
+
+function addLunchToEnd(arr, lunchItem) {
+  arr.push(lunchItem);
+  console.log(`${lunchItem} added to the end of the lunch menu.`);
+  return arr;
+}
+
+function addLunchToStart(arr, lunchItem) {
+  arr.unshift(lunchItem);
+  console.log(`${lunchItem} added to the start of the lunch menu.`);
+  return arr;
+}
+
+function removeLastLunch(arr) {
+  if (arr.length > 0) {
+    let removedItem = arr.pop();
+    console.log(`${removedItem} removed from the end of the lunch menu.`);
+  } else {
+    console.log("No lunches to remove.");
+  }
+  return arr;
+}
+
+function removeFirstLunch(arr) {
+  if (arr.length > 0) {
+    let removedItem = arr.shift();
+    console.log(`${removedItem} removed from the start of the lunch menu.`);
+  } else {
+    console.log("No lunches to remove.");
+  }
+  return arr;
+}
+
+function getRandomLunch(arr) {
+  if (arr.length > 0) {
+    let randomIndex = Math.floor(Math.random() * arr.length);
+    console.log(`Randomly selected lunch: ${arr[randomIndex]}`);
+  } else {
+    console.log("No lunches available.");
+  }
+}
+
+function showLunchMenu(arr) {
+  if (arr.length > 0) {
+    console.log(`Menu items: ${arr.join(", ")}`);
+  } else {
+    console.log("The menu is empty.");
+  }
+}
+- - - - - - - -
+___________________________________________________________________________________________________________________________________________________________________________
+
+let lunches = [];
+/*
+Se declara un array vacío con let porque su contenido
+cambiará a lo largo del programa al agregar o eliminar elementos.
+*/
+
+function addLunchToEnd(arr, lunchItem) {
+/*
+Recibe el array y un string como argumentos.
+arr → el array donde se agregará el elemento.
+lunchItem → el string que se agregará al final.
+*/
+  arr.push(lunchItem);
+  /*
+  push() agrega lunchItem al final del array.
+  Modifica el array original directamente.
+  */
+  return arr;
+  /*
+  Devuelve el array actualizado para poder encadenar
+  operaciones o verificar el resultado.
+  */
+}
+
+function addLunchToStart(arr, lunchItem) {
+/*
+Misma estructura que addLunchToEnd pero agrega al inicio.
+*/
+  arr.unshift(lunchItem);
+  /*
+  unshift() agrega lunchItem al inicio del array,
+  desplazando los demás elementos una posición hacia la derecha.
+  */
+  return arr;
+}
+
+function removeLastLunch(arr) {
+/*
+Recibe solo el array como argumento.
+Elimina el último elemento si el array no está vacío.
+*/
+  if (arr.length > 0) {
+    /*
+    arr.length > 0 verifica que el array tenga al menos un elemento
+    antes de intentar eliminar, evitando errores.
+    */
+    let removedItem = arr.pop();
+    /*
+    pop() elimina y devuelve el último elemento del array.
+    Se guarda en removedItem para usarlo en el console.log.
+    */
+    return arr;
+  } else {
+    /*
+    Si el array está vacío, no hay nada que eliminar.
+    */
+  }
+  return arr;
+}
+
+function removeFirstLunch(arr) {
+/*
+Misma estructura que removeLastLunch pero elimina el primer elemento.
+*/
+  if (arr.length > 0) {
+    let removedItem = arr.shift();
+    /*
+    shift() elimina y devuelve el primer elemento del array,
+    desplazando los demás elementos una posición hacia la izquierda.
+    */
+    return arr;
+  } else {
+  }
+  return arr;
+}
+
+function getRandomLunch(arr) {
+/*
+Selecciona y muestra un elemento aleatorio del array.
+No devuelve valor, solo registra en consola.
+*/
+  if (arr.length > 0) {
+    let randomIndex = Math.floor(Math.random() * arr.length);
+    /*
+    Math.random() genera un número entre 0 y 1.
+    Se multiplica por arr.length para obtener un número entre 0 y la longitud del array.
+    Math.floor() redondea hacia abajo para obtener un índice entero válido.
+    Ej: array de 5 elementos → índices válidos 0,1,2,3,4
+    Math.floor(Math.random() * 5) → número entre 0 y 4.
+    */
+  } else {
+  }
+}
+
+function showLunchMenu(arr) {
+/*
+Muestra todos los elementos del array en consola.
+*/
+  if (arr.length > 0) {
+    /*
+    join(", ") convierte el array en un string donde cada elemento
+    está separado por una coma y un espacio.
+    Ej: ["Pizza", "Burger", "Salad"] → "Pizza, Burger, Salad"
+    */
+  } else {
+  }
+}
+
+- - - - - - - -- - - - - - - -- - - - - - - -- - - - - - - -
+
+function golfScore(par, strokes) {
+  if (strokes === 1) {
+    return "Hole-in-one!";
+  }
+
+  if (strokes <= par - 2) {
+    return "Eagle";
+  }
+
+  if (strokes === par - 1) {
+    return "Birdie";
+  }
+
+  if (strokes === par) {
+    return "Par";
+  }
+
+  if (strokes === par + 1) {
+    return "Bogey";
+  }
+
+  if (strokes === par + 2) {
+    return "Double Bogey";
+  }
+
+  if (strokes >= par + 3) {
+    return "Go Home!";
+  }
+}
+
+- - - - - - - -- - - - - - - -- - - - - - - -- - - - - - - -
+
+function golfScore(par, strokes) {
+
+  /* Verifica si el jugador hizo el hoyo en un solo golpe */
+  if (strokes === 1) {
+    return "Hole-in-one!";
+  }
+
+  /* Verifica si los golpes son 2 o más debajo del par */
+  if (strokes <= par - 2) {
+    return "Eagle";
+  }
+
+  /* Verifica si los golpes son 1 debajo del par */
+  if (strokes === par - 1) {
+    return "Birdie";
+  }
+
+  /* Verifica si los golpes son iguales al par */
+  if (strokes === par) {
+    return "Par";
+  }
+
+  /* Verifica si los golpes son 1 por encima del par */
+  if (strokes === par + 1) {
+    return "Bogey";
+  }
+
+  /* Verifica si los golpes son 2 por encima del par */
+  if (strokes === par + 2) {
+    return "Double Bogey";
+  }
+
+  /* Verifica si los golpes son 3 o más por encima del par */
+  if (strokes >= par + 3) {
+    return "Go Home!";
+  }
+}
+
+______________________________
