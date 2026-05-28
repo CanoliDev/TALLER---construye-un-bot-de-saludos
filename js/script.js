@@ -1148,3 +1148,23 @@ function golfScore(par, strokes) {
 }
 
 ______________________________
+
+
+
+c4 end
+------------------------------
+const arr = ["apple", "banana", "cherry", "date"];
+const slicedArr = arr.slice(1, 3);
+console.log(slicedArr);
+------------------------------
+const arr = ["apple", "banana", "cherry", "date"];
+/* const → inmutable. [] → array de 4 strings. */
+
+const slicedArr = arr.slice(1, 3);
+/* slice(start, end) → extrae elementos desde índice start hasta end (sin incluirlo).
+1 → índice de inicio ("banana").
+3 → índice de fin, no incluido ("date").
+No modifica arr original, devuelve un nuevo array.
+slicedArr → ["banana", "cherry"] */
+
+console.log(slicedArr);
