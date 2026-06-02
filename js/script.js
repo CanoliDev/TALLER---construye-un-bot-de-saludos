@@ -1165,6 +1165,6 @@ const slicedArr = arr.slice(1, 3);
 1 → índice de inicio ("banana").
 3 → índice de fin, no incluido ("date").
 No modifica arr original, devuelve un nuevo array.
-slicedArr → ["banana", "cherry"] */
+slicedArr → ["banana",  gdia ues de owcherry"] */
 
 console.log(slicedArr);
