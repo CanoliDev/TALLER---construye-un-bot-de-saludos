@@ -1165,6 +1165,34 @@ const slicedArr = arr.slice(1, 3);
 1 → índice de inicio ("banana").
 3 → índice de fin, no incluido ("date").
 No modifica arr original, devuelve un nuevo array.
-slicedArr → ["banana",  gdia ues de owcherry"] */
+slicedArr → ["banana",  gdia ues de ow cherry"] */
 
 console.log(slicedArr);
+;M;::___________________________________________________________________________________________
+
+c5 stp 14 d 41
+
+const tiger = {
+  species: "Tiger",
+  age: 5,
+  isEndangered: true
+};
+
+const elephant = {
+  species: "Elephant",
+  age: 10,
+  isEndangered: true
+};
+
+const getSpecies = (animal) => {
+  return animal.species;
+};
+
+console.log(getSpecies(tiger));
+
+const getAge = (animal) => {
+  return animal.age;
+};
+
+console.log(getAge(tiger));
+
