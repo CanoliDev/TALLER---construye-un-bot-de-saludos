@@ -1196,12 +1196,198 @@ const getAge = (animal) => {
 
 console.log(getAge(tiger));
 
-
-
 const addHabitat = (animal, habitat) => {
   animal.habitat = habitat;
   return animal;
 };
 
 console.log(addHabitat(tiger, "Rainforest"));
-// {
+
+const updateAge = (animal, newAge) => {
+  animal.age = newAge;
+  return animal;
+};
+
+console.log(updateAge(elephant, 12));
+
+const removeEndangeredStatus = (animal) => {
+  delete animal.isEndangered;
+  return animal;
+};
+
+console.log(removeEndangeredStatus(tiger));
+
+const hasHabitat = (animal) => {
+  return animal.hasOwnProperty("habitat");
+};
+
+console.log(hasHabitat(tiger));
+console.log(hasHabitat(elephant));
+
+const getProperty = (animal, propertyName)=>{
+  return animal[propertyName];
+}
+
+console.log(getProperty(tiger, "species"));
+console.log(getProperty(elephant,"age"));
+------------------------------ ------------------------------------------------------------------------------------------------------------------------
+------------------------------
+const tiger = {
+  species: "Tiger",
+  age: 5,
+  isEndangered: true
+};
+
+const elephant = {
+  species: "Elephant",
+  age: 10,
+  isEndangered: true
+};
+
+const getSpecies = (animal) => {
+  return animal.species;
+};
+console.log(getSpecies(tiger));
+
+const getAge = (animal) => {
+  return animal.age;
+};
+console.log(getAge(tiger));
+
+const addHabitat = (animal, habitat) => {
+  animal.habitat = habitat;
+  return animal;
+};
+console.log(addHabitat(tiger, "Rainforest"));
+
+const updateAge = (animal, newAge) => {
+  animal.age = newAge;
+  return animal;
+};
+console.log(updateAge(elephant, 12));
+
+const removeEndangeredStatus = (animal) => {
+  delete animal.isEndangered;
+  return animal;
+};
+console.log(removeEndangeredStatus(tiger));
+
+const hasHabitat = (animal) => {
+  return animal.hasOwnProperty("habitat");
+};
+console.log(hasHabitat(tiger));
+console.log(hasHabitat(elephant));
+
+const getProperty = (animal, propertyName) => {
+  return animal[propertyName];
+};
+console.log(getProperty(tiger, "species"));
+console.log(getProperty(elephant, "age"));
+------------------------------
+const tiger = {
+  species: "Tiger",
+  age: 5,
+  isEndangered: true
+};
+/*
+const → inmutable en referencia, propiedades sí pueden cambiar.
+{} → sintaxis literal de objeto.
+: → separa clave y valor.
+"Tiger" → string, 5 → number, true → boolean.
+*/
+
+const elephant = {
+  species: "Elephant",
+  age: 10,
+  isEndangered: true
+};
+/*
+Misma estructura que tiger, segundo objeto del programa.
+*/
+
+const getSpecies = (animal) => {
+  return animal.species;
+};
+/*
+Arrow function, recibe animal como parámetro.
+. → notación de punto, accede a la propiedad species.
+return → devuelve el valor de species como string.
+*/
+console.log(getSpecies(tiger));
+/* Imprime: "Tiger" */
+
+const getAge = (animal) => {
+  return animal.age;
+};
+/*
+Accede a la propiedad age del objeto recibido.
+return → devuelve el valor de age como number.
+*/
+console.log(getAge(tiger));
+/* Imprime: 5 */
+
+const addHabitat = (animal, habitat) => {
+  animal.habitat = habitat;
+  return animal;
+};
+/*
+Recibe el objeto y un string habitat.
+animal.habitat = habitat → crea la propiedad habitat si no existe y asigna el valor.
+Los objetos se pasan por referencia, modifica el original directamente.
+return → devuelve el objeto con la nueva propiedad.
+*/
+console.log(addHabitat(tiger, "Rainforest"));
+/* Imprime: { species: "Tiger", age: 5, isEndangered: true, habitat: "Rainforest" } */
+
+const updateAge = (animal, newAge) => {
+  animal.age = newAge;
+  return animal;
+};
+/*
+animal.age = newAge → sobreescribe la propiedad age existente con el nuevo valor.
+return → devuelve el objeto con age actualizado.
+*/
+console.log(updateAge(elephant, 12));
+/* Imprime: { species: "Elephant", age: 12, isEndangered: true } */
+
+const removeEndangeredStatus = (animal) => {
+  delete animal.isEndangered;
+  return animal;
+};
+/*
+delete → palabra clave que elimina completamente la propiedad del objeto.
+isEndangered deja de existir en animal después de ejecutarse.
+return → devuelve el objeto sin la propiedad eliminada.
+*/
+console.log(removeEndangeredStatus(tiger));
+/* Imprime: { species: "Tiger", age: 5, habitat: "Rainforest" } */
+
+const hasHabitat = (animal) => {
+  return animal.hasOwnProperty("habitat");
+};
+/*
+hasOwnProperty() → método nativo de objetos JS.
+Recibe un string con el nombre de la propiedad a verificar.
+Devuelve true si existe en el objeto, false si no.
+*/
+console.log(hasHabitat(tiger));
+/* Imprime: true → habitat fue agregado en addHabitat */
+console.log(hasHabitat(elephant));
+/* Imprime: false → elephant nunca recibió propiedad habitat */
+
+const getProperty = (animal, propertyName) => {
+  return animal[propertyName];
+};
+/*
+[] → notación de corchetes, accede a propiedades usando una variable como clave.
+propertyName → contiene el nombre de la propiedad como string.
+Equivalente a notación de punto pero dinámico.
+Ej: animal["species"] === animal.species → "Tiger"
+*/
+console.log(getProperty(tiger, "species"));
+/* Imprime: "Tiger" */
+console.log(getProperty(elephant, "age"));
+/* Imprime: 12 → age fue actualizado en updateAge */
+
+_________________________________________________________________________
+c5 stp 19 d 41
