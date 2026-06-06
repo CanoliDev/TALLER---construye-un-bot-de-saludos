@@ -1390,4 +1390,188 @@ console.log(getProperty(elephant, "age"));
 /* Imprime: 12 → age fue actualizado en updateAge */
 
 _________________________________________________________________________
-c5 stp 19 d 41
+c5 stp 20 d 41
+
+------------------------------
+function normalizeUnits(manifest) {
+  if (manifest.unit === "lb") {
+    return {
+      ...manifest,
+      weight: manifest.weight * 0.45,
+      unit: "kg"
+    };
+  }
+  return { ...manifest };
+}
+
+function validateManifest(manifest) {
+  const errors = {};
+  const requiredProps = ["containerId", "destination", "weight", "unit", "hazmat"];
+
+  for (const prop of requiredProps) {
+    if (!(prop in manifest)) {
+      errors[prop] = "Missing";
+    } else if (
+      (prop === "containerId" && (!Number.isInteger(manifest.containerId) || manifest.containerId <= 0)) ||
+      (prop === "destination" && (typeof manifest.destination !== "string" || manifest.destination.trim() === "")) ||
+      (prop === "weight" && (typeof manifest.weight !== "number" || Number.isNaN(manifest.weight) || manifest.weight <= 0)) ||
+      (prop === "unit" && manifest.unit !== "lb" && manifest.unit !== "kg") ||
+      (prop === "hazmat" && typeof manifest.hazmat !== "boolean")
+    ) {
+      errors[prop] = "Invalid";
+    }
+  }
+  return errors;
+}
+
+function processManifest(manifest) {
+  const errors = validateManifest(manifest);
+
+  if (Object.keys(errors).length === 0) {
+    const normalized = normalizeUnits(manifest);
+    console.log(`Validation success: ${manifest.containerId}`);
+    console.log(`Total weight: ${normalized.weight} kg`);
+  } else {
+    console.log(`Validation error: ${manifest.containerId}`);
+    console.log(validateManifest(manifest));
+  }
+}
+------------------------------
+function normalizeUnits(manifest) {
+/*
+Recibe un objeto manifest.
+No modifica el original, siempre devuelve un nuevo objeto.
+*/
+  if (manifest.unit === "lb") {
+  /*
+  === → compara valor y tipo estrictamente.
+  Verifica si la unidad es libras para aplicar conversión.
+  */
+    return {
+      ...manifest,
+      weight: manifest.weight * 0.45,
+      unit: "kg"
+    };
+    /*
+    ... → operador spread, copia todas las propiedades del objeto original.
+    weight → sobreescribe el peso multiplicándolo por 0.45 (1 lb = 0.45 kg).
+    unit → sobreescribe la unidad a "kg".
+    El spread + sobreescritura garantiza que el objeto original no se modifique.
+    */
+  }
+  return { ...manifest };
+  /*
+  Si la unidad ya es "kg", devuelve una copia del objeto sin cambios.
+  {} con spread evita devolver la referencia original.
+  */
+}
+
+function validateManifest(manifest) {
+/*
+Recibe un objeto manifest.
+Devuelve {} si es válido, o un objeto con errores si no lo es.
+No modifica el original.
+*/
+  const errors = {};
+  /*
+  {} → objeto vacío donde se acumularán los errores encontrados.
+  */
+
+  const requiredProps = ["containerId", "destination", "weight", "unit", "hazmat"];
+  /*
+  Array con los nombres de todas las propiedades requeridas.
+  Sirve como referencia para iterar y validar cada una.
+  */
+
+  for (const prop of requiredProps) {
+  /*
+  for...of → itera sobre cada elemento del array.
+  prop → toma el valor string de cada propiedad en cada iteración.
+  */
+    if (!(prop in manifest)) {
+    /*
+    in → verifica si la propiedad existe en el objeto.
+    ! → niega el resultado, entra si la propiedad NO existe.
+    */
+      errors[prop] = "Missing";
+      /*
+      [] → notación de corchetes, crea dinámicamente una propiedad en errors.
+      Asigna "Missing" si la propiedad no existe en el manifest.
+      */
+    } else if (
+      (prop === "containerId" && (!Number.isInteger(manifest.containerId) || manifest.containerId <= 0)) ||
+      /*
+      Number.isInteger() → verifica si el valor es un número entero.
+      ! → niega el resultado, inválido si NO es entero.
+      || → inválido también si containerId es <= 0.
+      Ej: 3.50 no es entero → "Invalid". 0 es <= 0 → "Invalid".
+      */
+      (prop === "destination" && (typeof manifest.destination !== "string" || manifest.destination.trim() === "")) ||
+      /*
+      typeof !== "string" → inválido si no es string.
+      .trim() → elimina espacios al inicio y al final.
+      === "" → inválido si el string está vacío o solo tiene espacios.
+      Ej: "  " → trim() → "" → "Invalid".
+      */
+      (prop === "weight" && (typeof manifest.weight !== "number" || Number.isNaN(manifest.weight) || manifest.weight <= 0)) ||
+      /*
+      typeof !== "number" → inválido si no es número.
+      Number.isNaN() → inválido si es NaN (Not a Number).
+      <= 0 → inválido si el peso es negativo o cero.
+      */
+      (prop === "unit" && manifest.unit !== "lb" && manifest.unit !== "kg") ||
+      /*
+      && → inválido solo si unit NO es "lb" Y NO es "kg".
+      Cualquier otro string como "pounds" es inválido.
+      */
+      (prop === "hazmat" && typeof manifest.hazmat !== "boolean")
+      /*
+      typeof !== "boolean" → inválido si no es true o false.
+      Ej: "no" es string → "Invalid".
+      */
+    ) {
+      errors[prop] = "Invalid";
+      /*
+      Asigna "Invalid" a la propiedad en errors si su valor no cumple las reglas.
+      */
+    }
+  }
+  return errors;
+  /*
+  Devuelve errors. Si no hubo errores devuelve {}.
+  Si hubo errores devuelve un objeto con las propiedades inválidas o faltantes.
+  */
+}
+
+function processManifest(manifest) {
+/*
+Función principal que coordina validación y normalización.
+Registra en consola el resultado según si el manifest es válido o no.
+*/
+  const errors = validateManifest(manifest);
+  /*
+  Llama validateManifest y guarda el resultado.
+  Si errors está vacío el manifest es válido.
+  */
+
+  if (Object.keys(errors).length === 0) {
+  /*
+  Object.keys() → devuelve array con las claves del objeto errors.
+  .length === 0 → verifica si no hay errores.
+  */
+    const normalized = normalizeUnits(manifest);
+    /*
+    Convierte el peso a kg si es necesario.
+    Guarda el objeto normalizado sin modificar el original.
+    */
+    console.log(`Validation success: ${manifest.containerId}`);
+    console.log(`Total weight: ${normalized.weight} kg`);
+  } else {
+    console.log(`Validation error: ${manifest.containerId}`);
+    console.log(validateManifest(manifest));
+    /*
+    Llama validateManifest nuevamente para pasar el objeto
+    de errores directamente a console.log sin guardarlo en variable.
+    */
+  }
+}
