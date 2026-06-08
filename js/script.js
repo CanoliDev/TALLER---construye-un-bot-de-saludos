@@ -1575,3 +1575,6 @@ Registra en consola el resultado según si el manifest es válido o no.
     */
   }
 }
+
+APRTIR DE MAÑAN YA NO SERRE MAS VAGO , AVANZARE UN MODULO  MAS EN EL CURSO ,
+ YA NO ME QUEDARE ATRAS , VAMOS POR MASSSS
