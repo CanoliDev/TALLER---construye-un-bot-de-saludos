@@ -1578,3 +1578,9 @@ Registra en consola el resultado según si el manifest es válido o no.
 
 APRTIR DE MAÑAN YA NO SERRE MAS VAGO , AVANZARE UN MODULO  MAS EN EL CURSO ,
  YA NO ME QUEDARE ATRAS , VAMOS POR MASSSS
+
+
+aclaracion 6 horas de estudio diario ,
+ 3 horas en la mañana y 3 horas en la noche , 
+ no me importa nada , voy a avanzar y terminar
+  este curso de una vez por todas , no me quedare atras , vamos por massssss
