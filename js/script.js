@@ -1590,6 +1590,7 @@ aclaracion 6 horas de estudio diario ,
   
 avanze hoy en teoria y aplique a gigcx, y saldre a trabjar un rarto para completar esos 45 servicios */
 __________________________________________________
+- - - - - - - -- - - - - - - -- - - - - - - -- - - - - - - -
 
 const recipes = [];
 
@@ -1632,10 +1633,84 @@ function getDifficultyLevel(cookingTime) {
     return "hard";
   }
 }
- 
-const  recipe1TotalIngredients  =getTotalIngredients(recipe1.ingredients);
 
-const  recipe1DifficultyLevel  =getDifficultyLevel(recipe1.difficultyLevel) ;
+const recipe1TotalIngredients = getTotalIngredients(recipe1.ingredients);
 
-console.log(recipe1TotalIngredients)
-console.log(recipe1DifficultyLevel)
+const recipe1DifficultyLevel = getDifficultyLevel(recipe1.cookingTime);
+
+recipe1.totalIngredients = getTotalIngredients(recipe1.ingredients);
+recipe1.difficultyLevel = getDifficultyLevel(recipe1.cookingTime);
+
+recipe2.totalIngredients = getTotalIngredients(recipe2.ingredients);
+recipe2.difficultyLevel = getDifficultyLevel(recipe2.cookingTime);
+
+recipe3.totalIngredients = getTotalIngredients(recipe3.ingredients);
+recipe3.difficultyLevel = getDifficultyLevel(recipe3.cookingTime);
+
+console.log(recipe1TotalIngredients);
+console.log(recipe1DifficultyLevel);
+console.log(recipes);
+
+- - - - - - - -- - - - - - - -- - - - - - - -- - - - - - - -
+
+const recipes = []; /* Arreglo que almacenará todas las recetas */
+
+const recipe1 = {
+  name: "Spaghetti Carbonara", /* Nombre de la receta */
+  ingredients: ["spaghetti", "Parmesan cheese", "pancetta", "black pepper"], /* Ingredientes */
+  cookingTime: 22, /* Tiempo de preparación en minutos */
+  totalIngredients: null, /* Cantidad total de ingredientes, se calculará después */
+  difficultyLevel: "" /* Nivel de dificultad, se asignará después */
+};
+
+const recipe2 = {
+  name: "Chicken Curry", /* Nombre de la receta */
+  ingredients: ["chicken breast", "coconut milk", "curry powder", "onion", "garlic"], /* Ingredientes */
+  cookingTime: 42, /* Tiempo de preparación en minutos */
+  totalIngredients: null, /* Cantidad total de ingredientes, se calculará después */
+  difficultyLevel: "" /* Nivel de dificultad, se asignará después */
+};
+
+const recipe3 = {
+  name: "Vegetable Stir Fry", /* Nombre de la receta */
+  ingredients: ["broccoli", "carrot", "bell pepper"], /* Ingredientes */
+  cookingTime: 15, /* Tiempo de preparación en minutos */
+  totalIngredients: null, /* Cantidad total de ingredientes, se calculará después */
+  difficultyLevel: "" /* Nivel de dificultad, se asignará después */
+};
+
+recipes.push(recipe1, recipe2, recipe3); /* Agrega las tres recetas al arreglo recipes */
+
+function getTotalIngredients(ingredients) {
+  return ingredients.length; /* Retorna la cantidad de elementos del arreglo de ingredientes */
+}
+
+function getDifficultyLevel(cookingTime) {
+  if (cookingTime <= 30) {
+    return "easy"; /* Fácil si tarda 30 minutos o menos */
+  } else if (cookingTime <= 60) {
+    return "medium"; /* Media si tarda entre 31 y 60 minutos */
+  } else {
+    return "hard"; /* Difícil si tarda más de 60 minutos */
+  }
+}
+
+const recipe1TotalIngredients = getTotalIngredients(recipe1.ingredients); 
+/* Calcula la cantidad de ingredientes de la receta 1 */
+
+const recipe1DifficultyLevel = getDifficultyLevel(recipe1.cookingTime); /* Calcula la dificultad de la receta 1 */
+
+recipe1.totalIngredients = getTotalIngredients(recipe1.ingredients); /* Actualiza totalIngredients de recipe1 */
+recipe1.difficultyLevel = getDifficultyLevel(recipe1.cookingTime); /* Actualiza difficultyLevel de recipe1 */
+
+recipe2.totalIngredients = getTotalIngredients(recipe2.ingredients); /* Actualiza totalIngredients de recipe2 */
+recipe2.difficultyLevel = getDifficultyLevel(recipe2.cookingTime); /* Actualiza difficultyLevel de recipe2 */
+
+recipe3.totalIngredients = getTotalIngredients(recipe3.ingredients); /* Actualiza totalIngredients de recipe3 */
+recipe3.difficultyLevel = getDifficultyLevel(recipe3.cookingTime); /* Actualiza difficultyLevel de recipe3 */
+
+console.log(recipe1TotalIngredients);
+console.log(recipe1DifficultyLevel);
+console.log(recipes);
+
+- - - - - - - -- - - - - - - -- - - - - - - -- - - - - - - -
