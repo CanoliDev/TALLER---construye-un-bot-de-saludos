@@ -1592,125 +1592,282 @@ avanze hoy en teoria y aplique a gigcx, y saldre a trabjar un rarto para complet
 __________________________________________________
 - - - - - - - -- - - - - - - -- - - - - - - -- - - - - - - -
 
-const recipes = [];
+------------------------------
 
-const recipe1 = {
-  name: "Spaghetti Carbonara",
-  ingredients: ["spaghetti", "Parmesan cheese", "pancetta", "black pepper"],
-  cookingTime: 22,
-  totalIngredients: null,
-  difficultyLevel: ""
+const recipes=[];
+
+const recipe1={
+  name:"Spaghetti Carbonara",
+  ingredients:["spaghetti","Parmesan cheese","pancetta","black pepper"],
+  cookingTime:22,
+  totalIngredients:null,
+  difficultyLevel:""
 };
 
-const recipe2 = {
-  name: "Chicken Curry",
-  ingredients: ["chicken breast", "coconut milk", "curry powder", "onion", "garlic"],
-  cookingTime: 42,
-  totalIngredients: null,
-  difficultyLevel: ""
+const recipe2={
+  name:"Chicken Curry",
+  ingredients:["chicken breast","coconut milk","curry powder","onion","garlic"],
+  cookingTime:42,
+  totalIngredients:null,
+  difficultyLevel:""
 };
 
-const recipe3 = {
-  name: "Vegetable Stir Fry",
-  ingredients: ["broccoli", "carrot", "bell pepper"],
-  cookingTime: 15,
-  totalIngredients: null,
-  difficultyLevel: ""
+const recipe3={
+  name:"Vegetable Stir Fry",
+  ingredients:["broccoli","carrot","bell pepper"],
+  cookingTime:15,
+  totalIngredients:null,
+  difficultyLevel:""
 };
 
-recipes.push(recipe1, recipe2, recipe3);
+recipes.push(recipe1,recipe2,recipe3);
 
-function getTotalIngredients(ingredients) {
+function getTotalIngredients(ingredients){
   return ingredients.length;
 }
 
-function getDifficultyLevel(cookingTime) {
-  if (cookingTime <= 30) {
+function getDifficultyLevel(cookingTime){
+  if(cookingTime<=30){
     return "easy";
-  } else if (cookingTime <= 60) {
+  }else if(cookingTime<=60){
     return "medium";
-  } else {
+  }else{
     return "hard";
   }
 }
 
-const recipe1TotalIngredients = getTotalIngredients(recipe1.ingredients);
+const recipe1TotalIngredients=getTotalIngredients(recipe1.ingredients);
+const recipe1DifficultyLevel=getDifficultyLevel(recipe1.cookingTime);
 
-const recipe1DifficultyLevel = getDifficultyLevel(recipe1.cookingTime);
+recipe1.totalIngredients=getTotalIngredients(recipe1.ingredients);
+recipe1.difficultyLevel=getDifficultyLevel(recipe1.cookingTime);
 
-recipe1.totalIngredients = getTotalIngredients(recipe1.ingredients);
-recipe1.difficultyLevel = getDifficultyLevel(recipe1.cookingTime);
+recipe2.totalIngredients=getTotalIngredients(recipe2.ingredients);
+recipe2.difficultyLevel=getDifficultyLevel(recipe2.cookingTime);
 
-recipe2.totalIngredients = getTotalIngredients(recipe2.ingredients);
-recipe2.difficultyLevel = getDifficultyLevel(recipe2.cookingTime);
-
-recipe3.totalIngredients = getTotalIngredients(recipe3.ingredients);
-recipe3.difficultyLevel = getDifficultyLevel(recipe3.cookingTime);
+recipe3.totalIngredients=getTotalIngredients(recipe3.ingredients);
+recipe3.difficultyLevel=getDifficultyLevel(recipe3.cookingTime);
 
 console.log(recipe1TotalIngredients);
 console.log(recipe1DifficultyLevel);
 console.log(recipes);
 
-- - - - - - - -- - - - - - - -- - - - - - - -- - - - - - - -
+------------------------------
 
-const recipes = []; /* Arreglo que almacenará todas las recetas */
+const recipes=[];/* const=crea una referencia que no puede apuntar a otro valor. [] crea un arreglo vacío. recipes almacenará todas las recetas. */
 
-const recipe1 = {
-  name: "Spaghetti Carbonara", /* Nombre de la receta */
-  ingredients: ["spaghetti", "Parmesan cheese", "pancetta", "black pepper"], /* Ingredientes */
-  cookingTime: 22, /* Tiempo de preparación en minutos */
-  totalIngredients: null, /* Cantidad total de ingredientes, se calculará después */
-  difficultyLevel: "" /* Nivel de dificultad, se asignará después */
+const recipe1={ /* {} crea un objeto: una estructura que agrupa datos relacionados mediante propiedades clave:valor */
+  name:"Spaghetti Carbonara",/* name es una propiedad. : separa nombre de propiedad y valor. */
+  ingredients:["spaghetti","Parmesan cheese","pancetta","black pepper"],/* [] crea un arreglo. Cada elemento ocupa una posición numérica empezando en 0. */
+  cookingTime:22,/* número de minutos */
+  totalIngredients:null,/* null significa "sin valor calculado todavía" */
+  difficultyLevel:""/* cadena vacía. Se llenará después. */
 };
 
-const recipe2 = {
-  name: "Chicken Curry", /* Nombre de la receta */
-  ingredients: ["chicken breast", "coconut milk", "curry powder", "onion", "garlic"], /* Ingredientes */
-  cookingTime: 42, /* Tiempo de preparación en minutos */
-  totalIngredients: null, /* Cantidad total de ingredientes, se calculará después */
-  difficultyLevel: "" /* Nivel de dificultad, se asignará después */
+const recipe2={
+  name:"Chicken Curry",
+  ingredients:["chicken breast","coconut milk","curry powder","onion","garlic"],
+  cookingTime:42,
+  totalIngredients:null,
+  difficultyLevel:""
 };
 
-const recipe3 = {
-  name: "Vegetable Stir Fry", /* Nombre de la receta */
-  ingredients: ["broccoli", "carrot", "bell pepper"], /* Ingredientes */
-  cookingTime: 15, /* Tiempo de preparación en minutos */
-  totalIngredients: null, /* Cantidad total de ingredientes, se calculará después */
-  difficultyLevel: "" /* Nivel de dificultad, se asignará después */
+const recipe3={
+  name:"Vegetable Stir Fry",
+  ingredients:["broccoli","carrot","bell pepper"],
+  cookingTime:15,
+  totalIngredients:null,
+  difficultyLevel:""
 };
 
-recipes.push(recipe1, recipe2, recipe3); /* Agrega las tres recetas al arreglo recipes */
+recipes.push(recipe1,recipe2,recipe3);/* . accede a un método de un objeto. push() agrega elementos al final del arreglo recipes. */
 
-function getTotalIngredients(ingredients) {
-  return ingredients.length; /* Retorna la cantidad de elementos del arreglo de ingredientes */
+function getTotalIngredients(ingredients){/* function crea una función reutilizable. ingredients es un parámetro que recibirá un arreglo. */
+  return ingredients.length;/* return devuelve un valor al lugar donde se llamó la función. .length devuelve la cantidad de elementos del arreglo. */
 }
 
-function getDifficultyLevel(cookingTime) {
-  if (cookingTime <= 30) {
-    return "easy"; /* Fácil si tarda 30 minutos o menos */
-  } else if (cookingTime <= 60) {
-    return "medium"; /* Media si tarda entre 31 y 60 minutos */
-  } else {
-    return "hard"; /* Difícil si tarda más de 60 minutos */
+function getDifficultyLevel(cookingTime){/* recibe un número de minutos y devuelve una dificultad */
+  if(cookingTime<=30){/* if ejecuta código si la condición es verdadera. <= significa menor o igual. */
+    return "easy";
+  }else if(cookingTime<=60){/* else if evalúa otra condición si la anterior fue falsa. */
+    return "medium";
+  }else{/* else se ejecuta cuando ninguna condición anterior fue verdadera. */
+    return "hard";
   }
 }
 
-const recipe1TotalIngredients = getTotalIngredients(recipe1.ingredients); 
-/* Calcula la cantidad de ingredientes de la receta 1 */
+const recipe1TotalIngredients=getTotalIngredients(recipe1.ingredients);
+/* = asigna un valor.
+   recipe1.ingredients:
+   . accede a una propiedad del objeto.
+   Obtiene el arreglo de ingredientes.
+   La función cuenta los elementos.
+   Resultado: 4.
+*/
 
-const recipe1DifficultyLevel = getDifficultyLevel(recipe1.cookingTime); /* Calcula la dificultad de la receta 1 */
+const recipe1DifficultyLevel=getDifficultyLevel(recipe1.cookingTime);
+/* Obtiene cookingTime (22).
+   La función evalúa 22<=30.
+   Resultado: "easy".
+*/
 
-recipe1.totalIngredients = getTotalIngredients(recipe1.ingredients); /* Actualiza totalIngredients de recipe1 */
-recipe1.difficultyLevel = getDifficultyLevel(recipe1.cookingTime); /* Actualiza difficultyLevel de recipe1 */
+recipe1.totalIngredients=getTotalIngredients(recipe1.ingredients);
+/* Se calcula nuevamente la cantidad de ingredientes.
+   Resultado: 4.
+   Se guarda dentro de la propiedad totalIngredients del objeto recipe1.
+*/
 
-recipe2.totalIngredients = getTotalIngredients(recipe2.ingredients); /* Actualiza totalIngredients de recipe2 */
-recipe2.difficultyLevel = getDifficultyLevel(recipe2.cookingTime); /* Actualiza difficultyLevel de recipe2 */
+recipe1.difficultyLevel=getDifficultyLevel(recipe1.cookingTime);
+/* Se calcula dificultad usando 22 minutos.
+   Resultado: "easy".
+   Se almacena en difficultyLevel.
+*/
 
-recipe3.totalIngredients = getTotalIngredients(recipe3.ingredients); /* Actualiza totalIngredients de recipe3 */
-recipe3.difficultyLevel = getDifficultyLevel(recipe3.cookingTime); /* Actualiza difficultyLevel de recipe3 */
+recipe2.totalIngredients=getTotalIngredients(recipe2.ingredients);
+/* Cuenta ingredientes de recipe2.
+   Resultado: 5.
+*/
+
+recipe2.difficultyLevel=getDifficultyLevel(recipe2.cookingTime);
+/* 42<=60 es verdadero.
+   Resultado: "medium".
+*/
+
+recipe3.totalIngredients=getTotalIngredients(recipe3.ingredients);
+/* Cuenta ingredientes de recipe3.
+   Resultado: 3.
+*/
+
+recipe3.difficultyLevel=getDifficultyLevel(recipe3.cookingTime);
+/* 15<=30 es verdadero.
+   Resultado: "easy".
+*/
 
 console.log(recipe1TotalIngredients);
 console.log(recipe1DifficultyLevel);
 console.log(recipes);
 
-- - - - - - - -- - - - - - - -- - - - - - - -- - - - - - - -
+/* Estado final de recipes:
+
+[
+  {
+    name:"Spaghetti Carbonara",
+    ingredients:[...],
+    cookingTime:22,
+    totalIngredients:4,
+    difficultyLevel:"easy"
+  },
+  {
+    name:"Chicken Curry",
+    ingredients:[...],
+    cookingTime:42,
+    totalIngredients:5,
+    difficultyLevel:"medium"
+  },
+  {
+    name:"Vegetable Stir Fry",
+    ingredients:[...],
+    cookingTime:15,
+    totalIngredients:3,
+    difficultyLevel:"easy"
+  }
+]
+
+El objetivo del programa es:
+1. Crear recetas.
+2. Guardarlas en un arreglo.
+3. Calcular automáticamente cuántos ingredientes tiene cada una.
+4. Determinar su dificultad según el tiempo de cocción.
+5. Actualizar los objetos con esos valores.
+6. Mostrar el resultado final.
+*/
+
+------------------------------
+
+
+/*
+Aprobado:1. Deberías crear un array llamado questions.
+Aprobado:2. El array questions debe contener al menos cinco objetos, cada uno con las claves category, question, choices y answer.
+Aprobado:3. La clave category debe tener el valor de una cadena que represente una categoría de pregunta.
+Aprobado:4. La clave question debe tener el valor de una cadena que represente una pregunta.
+Aprobado:5. La clave choices debe tener el valor de un arreglo que contenga tres cadenas diferentes entre sí.
+Aprobado:6. La clave answer debe tener el valor de una cadena.
+Aprobado:7. El valor de answer debe estar incluido en el array choices.
+Aprobado:8. Debes tener una función llamada getRandomQuestion que tome un array de preguntas como parámetro y devuelva un objeto de pregunta aleatoria del array.
+Aprobado:9. Debes tener una función llamada getRandomComputerChoice que tome el array de las opciones disponibles como parámetro y devuelva una respuesta aleatoria a la pregunta seleccionada.
+Aprobado:10. Debes tener una función llamada getResults.
+Aprobado:11. Tu función getResults debe tomar el objeto de pregunta como primer parámetro y la elección de la computadora como segundo parámetro.
+Aprobado:12. Si la elección de la computadora coincide con la respuesta, getResults debería devolver ¡La elección de la computadora es correcta!
+Aprobado:13. Si la elección de la computadora no coincide con la respuesta, getResults debe devolver The computer's choice is wrong. The correct answer is: <correct-answer>, donde <correct-answer> es el valor de la respuesta correcta a la pregunta elegida.
+Aprobado:14. Tu función getResults debe usar comparación de igualdad exacta, no coincidencia de subcadenas.
+
+Deberías crear un array llamado questions.
+El array questions debe contener al menos cinco objetos, cada uno con las claves category, question, choices y answer.
+La clave category debe tener el valor de una cadena que represente una categoría de pregunta.
+La clave question debe tener el valor de una cadena que represente una pregunta.
+La clave choices debe tener el valor de un array que contenga tres cadenas, que son respuestas alternativas a la pregunta.
+La clave answer debe tener el valor de una cadena, que representa la respuesta correcta a la pregunta. Además, el valor de answer debe estar incluido en el array choices.
+Debes tener una función llamada getRandomQuestion que tome un array de preguntas como parámetro y devuelva un objeto de pregunta aleatoria del array.
+Debes tener una función llamada getRandomComputerChoice que tome el array de las opciones disponibles como parámetro y devuelva una respuesta aleatoria a la pregunta seleccionada.
+Debes tener una función llamada getResults que tome el objeto de pregunta como primer parámetro y la elección de la computadora como segundo parámetro. La función debe devolver ¡La elección de la computadora es correcta! si la respuesta es correcta. De lo contrario, devuelve La elección de la computadora es incorrecta.  The correct answer is: , where ` is the value of the correct answer to the chosen question.
+ */
+
+const questions = [
+  {
+    category: "Science",
+    question: "What is the chemical symbol for water?",
+    choices: ["H2O", "CO2", "O2"],
+    answer: "H2O"
+  },
+  {
+    category: "Math",
+    question: "What is 12 x 12?",
+    choices: ["124", "144", "164"],
+    answer: "144"
+  },
+  {
+    category: "History",
+    question: "In what year did World War II end?",
+    choices: ["1943", "1945", "1947"],
+    answer: "1945"
+  },
+  {
+    category: "Geography",
+    question: "What is the capital of France?",
+    choices: ["London", "Berlin", "Paris"],
+    answer: "Paris"
+  },
+  {
+    category: "Technology",
+    question: "What does CPU stand for?",
+    choices: ["Central Processing Unit", "Computer Personal Unit", "Central Program Utility"],
+    answer: "Central Processing Unit"
+  }
+];
+
+function getRandomQuestion(questions) {
+  return questions[Math.floor(Math.random() * questions.length)];
+}
+
+function getRandomComputerChoice(choices) {
+  return choices[Math.floor(Math.random() * choices.length)];
+}
+function getResults(question, computerChoice) {
+  if (computerChoice === question.answer) {
+    return "The computer's choice is correct!";
+  } else {
+    return `The computer's choice is wrong. The correct answer is: ${question.answer}`;
+  }
+}
+
+este fue el que cambio
+
+function getResults(question, computerChoice) {
+  if (computerChoice === question.answer) {
+    return "La elección de la computadora es correcta!";
+  } else {
+    return `La elección de la computadora es incorrecta. The correct answer is: ${question.answer}`;
+  }
+}
+
+
