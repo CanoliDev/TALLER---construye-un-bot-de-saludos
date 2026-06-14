@@ -1870,4 +1870,4 @@ function getResults(question, computerChoice) {
   }
 }
 
-
+HORIZON TODO EL D
