@@ -1871,3 +1871,142 @@ function getResults(question, computerChoice) {
 }
 
 HORIZON TODO EL D
+
+_______________________________
+------------------------------
+constquestions = [
+  {
+    category: "Science",
+    question: "What is the chemical symbol for water?",
+    choices: ["H2O", "CO2", "O2"],
+    answer: "H2O"
+  },
+  {
+    category: "Math",
+    question: "What is 12 x 12?",
+    choices: ["124", "144", "164"],
+    answer: "144"
+  },
+  {
+    category: "History",
+    question: "In what year did World War II end?",
+    choices: ["1943", "1945", "1947"],
+    answer: "1945"
+  },
+  {
+    category: "Geography",
+    question: "What is the capital of France?",
+    choices: ["London", "Berlin", "Paris"],
+    answer: "Paris"
+  },
+  {
+    category: "Technology",
+    question: "What does CPU stand for?",
+    choices: ["Central Processing Unit", "Computer Personal Unit", "Central Program Utility"],
+    answer: "Central Processing Unit"
+  }
+];
+
+function getRandomQuestion(questions) {
+  return questions[Math.floor(Math.random() * questions.length)];
+}
+
+function getRandomComputerChoice(choices) {
+  return choices[Math.floor(Math.random() * choices.length)];
+}
+
+function getResults(question, computerChoice) {
+  if (computerChoice === question.answer) {
+    return "La elección de la computadora es correcta!";
+  } else {
+    return `La elección de la computadora es incorrecta. The correct answer is: ${question.answer}`;
+  }
+}
+------------------------------
+const questions = [
+/*
+[] → array que contiene 5 objetos de preguntas.
+Cada objeto tiene category, question, choices y answer.
+*/
+  {
+    category: "Science",
+    /* category → string, identifica el tema de la pregunta */
+    question: "What is the chemical symbol for water?",
+    /* question → string con el enunciado de la pregunta */
+    choices: ["H2O", "CO2", "O2"],
+    /* choices → array de 3 strings, opciones de respuesta */
+    answer: "H2O"
+    /* answer → string que debe coincidir con uno de los choices */
+  },
+  {
+    category: "Math",
+    question: "What is 12 x 12?",
+    choices: ["124", "144", "164"],
+    answer: "144"
+  },
+  {
+    category: "History",
+    question: "In what year did World War II end?",
+    choices: ["1943", "1945", "1947"],
+    answer: "1945"
+  },
+  {
+    category: "Geography",
+    question: "What is the capital of France?",
+    choices: ["London", "Berlin", "Paris"],
+    answer: "Paris"
+  },
+  {
+    category: "Technology",
+    question: "What does CPU stand for?",
+    choices: ["Central Processing Unit", "Computer Personal Unit", "Central Program Utility"],
+    answer: "Central Processing Unit"
+  }
+];
+
+function getRandomQuestion(questions) {
+/*
+Recibe el array completo de preguntas.
+*/
+  return questions[Math.floor(Math.random() * questions.length)];
+  /*
+  Math.random() → genera decimal entre 0 y 1.
+  questions.length → 5 (total de preguntas).
+  Math.random() * questions.length → decimal entre 0 y 5 (sin incluir 5).
+  Math.floor() → redondea hacia abajo, da un índice entero entre 0 y 4.
+  questions[índice] → accede al objeto pregunta en esa posición.
+  Devuelve un objeto pregunta completo elegido al azar.
+  */
+}
+
+function getRandomComputerChoice(choices) {
+/*
+Recibe el array choices de la pregunta seleccionada.
+*/
+  return choices[Math.floor(Math.random() * choices.length)];
+  /*
+  Misma lógica que getRandomQuestion pero aplicada al array choices.
+  choices.length → 3 (siempre 3 opciones).
+  Devuelve un string aleatorio de las 3 opciones disponibles.
+  */
+}
+
+function getResults(question, computerChoice) {
+/*
+Recibe el objeto question completo y el string computerChoice
+devuelto por getRandomComputerChoice.
+*/
+  if (computerChoice === question.answer) {
+  /*
+  === → compara valor y tipo. Verifica si la elección de la
+  computadora coincide exactamente con la respuesta correcta.
+  */
+    return "La elección de la computadora es correcta!";
+  } else {
+    return `La elección de la computadora es incorrecta. The correct answer is: ${question.answer}`;
+    /*
+    ${} → template literal, inserta el valor de question.answer
+    directamente dentro del string.
+    */
+  }
+}
