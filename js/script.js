@@ -2010,3 +2010,109 @@ devuelto por getRandomComputerChoice.
     */
   }
 }
+
+________________________________________________
+
+const recordCollection = {
+  2548: {
+    albumTitle: 'Slippery When Wet',
+    artist: 'Bon Jovi',
+    tracks: ['Let It Rock', 'You Give Love a Bad Name']
+  },
+  2468: {
+    albumTitle: '1999',
+    artist: 'Prince',
+    tracks: ['1999', 'Little Red Corvette']
+  },
+  1245: {
+    artist: 'Robert Palmer',
+    tracks: []
+  },
+  5439: {
+    albumTitle: 'ABBA Gold'
+  }
+};
+function updateRecords(records, id, prop, value) {
+  if (value === "") {
+    delete records[id][prop];
+  } else if (prop === "tracks") {
+    if (!records[id].hasOwnProperty("tracks")) {
+      records[id].tracks = [];
+    }
+    records[id].tracks.push(value);
+  } else {
+    records[id][prop] = value;
+  }
+  return records;
+}
+------------------------------
+function updateRecords(records, id, prop, value) {
+/*
+Función que actualiza un álbum dentro del objeto records.
+records → objeto completo de la colección.
+id → número que identifica el álbum específico. Ej: 2548
+prop → string con el nombre de la propiedad a modificar. Ej: "tracks"
+value → string con el valor a asignar. Puede ser vacío "".
+*/
+
+  if (value === "") {
+  /*
+  === → compara valor y tipo estrictamente.
+  Si value es string vacío, la propiedad debe eliminarse del álbum.
+  */
+    delete records[id][prop];
+    /*
+    delete → palabra clave que elimina completamente una propiedad del objeto.
+    records[id] → [] notación de corchetes, accede al álbum usando id como clave dinámica.
+    Ej: records[2548] → accede al álbum Bon Jovi.
+    [prop] → accede a la propiedad usando prop como clave dinámica.
+    Ej: records[2548]["artist"] → elimina artist del álbum.
+    No se puede usar notación de punto porque id y prop son variables.
+    */
+
+  } else if (prop === "tracks") {
+  /*
+  Si value no es vacío Y prop es "tracks", entramos a este bloque.
+  tracks es especial porque es un array, no un string simple.
+  */
+
+    if (!records[id].hasOwnProperty("tracks")) {
+    /*
+    hasOwnProperty() → método nativo de objetos, devuelve true si la
+    propiedad existe en el objeto, false si no.
+    ! → niega el resultado, entra al bloque si tracks NO existe.
+    Ej: álbum 5439 no tiene tracks → crea el array vacío.
+    */
+      records[id].tracks = [];
+      /*
+      = → asigna un array vacío [] a la propiedad tracks del álbum.
+      Necesario antes de hacer push(), ya que no se puede agregar
+      a una propiedad que no existe.
+      */
+    }
+
+    records[id].tracks.push(value);
+    /*
+    .tracks → accede al array tracks del álbum (recién creado o ya existente).
+    push() → agrega value al final del array.
+    Ej: tracks = ["1999"] → push("Free") → ["1999", "Free"]
+    */
+
+  } else {
+    records[id][prop] = value;
+    /*
+    Si value no es vacío y prop no es "tracks", asigna directamente.
+    records[id] → accede al álbum por id.
+    [prop] → accede a la propiedad por nombre dinámico.
+    = → asigna el value a esa propiedad.
+    Ej: records[5439]["artist"] = "ABBA"
+    */
+  }
+
+  return records;
+  /*
+  Devuelve el objeto records completo con los cambios aplicados.
+  Como los objetos se pasan por referencia, los cambios ya están
+  aplicados sobre el original, pero se retorna para cumplir el requerimiento.
+  */
+}
