@@ -2116,3 +2116,14 @@ value → string con el valor a asignar. Puede ser vacío "".
   aplicados sobre el original, pero se retorna para cumplir el requerimiento.
   */
 }
+
+______________
+
+
+ORDEN DE LOS MÓDULOS:
+1. ESTUDIO RESUMEN , ACTULIZACON VSCOD
+ORDEN NOTION 
+ TAREAS, 
+
+ tambien aprendi a no cambiar el  nombre de la carpeta dev
+ 
