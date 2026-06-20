@@ -2127,3 +2127,7 @@ ORDEN NOTION
 
  tambien aprendi a no cambiar el  nombre de la carpeta dev
  
+ 
+ 
+ owwo todo el diaaaaaaaaaaa
+
