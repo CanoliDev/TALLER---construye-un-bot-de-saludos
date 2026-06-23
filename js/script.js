@@ -2132,4 +2132,4 @@ ORDEN NOTION
  owwo todo el diaaaaaaaaaaa
 
  x2
-
+ hoy hyega colmobia , mañana estudio durisimo
