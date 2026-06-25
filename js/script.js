@@ -2133,3 +2133,6 @@ ORDEN NOTION
 
  x2
  hoy hyega colmobia , mañana estudio durisimo
+
+hoydescanse durismiom mañana madurog
+
