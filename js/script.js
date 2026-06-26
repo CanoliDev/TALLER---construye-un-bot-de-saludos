@@ -2135,4 +2135,5 @@ ORDEN NOTION
  hoy hyega colmobia , mañana estudio durisimo
 
 hoydescanse durismiom mañana madurog
+creo ñque el lunes comienzo de nuevo supongo
 
