@@ -2138,3 +2138,6 @@ hoydescanse durismiom mañana madurog
 creo ñque el lunes comienzo de nuevo supongo
 mañan es el dia
 DEPRESION
+
+ya se me quito , esto es cuestio de mentalidad per mas que de mentalida
+ES DE ACTUAR, HAY QUE HACERLO ASI NO UIERAAAAAA
