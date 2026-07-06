@@ -2141,3 +2141,6 @@ DEPRESION
 
 ya se me quito , esto es cuestio de mentalidad per mas que de mentalida
 ES DE ACTUAR, HAY QUE HACERLO ASI NO UIERAAAAAA
+
+
+no mirar videos en la mañna es lo que debo hacer, si pierdo la mañan pierdo todo
