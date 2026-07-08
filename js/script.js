@@ -2145,3 +2145,6 @@ ES DE ACTUAR, HAY QUE HACERLO ASI NO UIERAAAAAA
 
 no mirar videos en la mañna es lo que debo hacer, si pierdo la mañan pierdo todo
 depresion
+
+
+buyeno ya se me quieto , ya empece a postular con grow up mentruas tanto
