@@ -2150,3 +2150,5 @@ depresion
 buyeno ya se me quieto , ya empece a postular con grow up mentruas tanto
 bueno ya tengo el teclado mañna empiezo omggggggggg tiene ññññññññññññññññññññññññññññññññññññññññññ jajaja
 lunes empiezo
+
+manana es el dia 
