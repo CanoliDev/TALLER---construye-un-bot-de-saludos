@@ -2152,3 +2152,4 @@ bueno ya tengo el teclado mañna empiezo omggggggggg tiene ññññññññññ�
 lunes empiezo
 
 manana es el dia 
+mañanes el dia definitivo
