@@ -2118,7 +2118,7 @@ value → string con el valor a asignar. Puede ser vacío "".
 }
 
 ______________
-
+/*
 
 ORDEN DE LOS MÓDULOS:
 1. ESTUDIO RESUMEN , ACTULIZACON VSCOD
@@ -2154,3 +2154,4 @@ lunes empiezo
 manana es el dia 
 mañanes el dia definitivo
 ya empece porfin
+pak ia , y dia 2*/
