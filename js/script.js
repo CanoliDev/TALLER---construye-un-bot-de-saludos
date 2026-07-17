@@ -2051,7 +2051,7 @@ function updateRecords(records, id, prop, value) {
 Función que actualiza un álbum dentro del objeto records.
 records → objeto completo de la colección.
 id → número que identifica el álbum específico. Ej: 2548
-prop → string con el nombre de la propiedad a modificar. Ej: "tracks"
+pr  op → string con el nombre de la propiedad a modificar. Ej: "tracks"
 value → string con el valor a asignar. Puede ser vacío "".
 */
 
@@ -2154,4 +2154,6 @@ lunes empiezo
 manana es el dia 
 mañanes el dia definitivo
 ya empece porfin
-pak ia , y dia 2*/
+pak ia , y dia 2
+
+hoy todo el dia estuve ene el mecanico ma;a*/
