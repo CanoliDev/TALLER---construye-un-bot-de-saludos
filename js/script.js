@@ -2156,4 +2156,8 @@ mañanes el dia definitivo
 ya empece porfin
 pak ia , y dia 2
 
-hoy todo el dia estuve ene el mecanico ma;a*/
+hoy todo el dia estuve ene el
+
+
+fap y se me van las ganas
+mecanico ma;a*/
