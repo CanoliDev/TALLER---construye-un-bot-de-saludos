@@ -2163,5 +2163,6 @@ fap y se me van las ganas
 mecanico ma;a
 
 todo va bien  mañan ya empiezo seguro
+vamos bien avanzando constnate 
 
 */
