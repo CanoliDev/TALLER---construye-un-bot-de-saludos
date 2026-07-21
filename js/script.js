@@ -2160,4 +2160,8 @@ hoy todo el dia estuve ene el
 
 
 fap y se me van las ganas
-mecanico ma;a*/
+mecanico ma;a
+
+todo va bien  mañan ya empiezo seguro
+
+*/
