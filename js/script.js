@@ -2165,4 +2165,6 @@ mecanico ma;a
 todo va bien  mañan ya empiezo seguro
 vamos bien avanzando constnate 
 terminamos con foto ia
+mañan le damos
+
 */
