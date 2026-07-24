@@ -2166,5 +2166,6 @@ todo va bien  mañan ya empiezo seguro
 vamos bien avanzando constnate 
 terminamos con foto ia
 mañan le damos
-
+ bien , ama vamos con el reto 30 dias
+ 
 */
