@@ -2169,4 +2169,6 @@ mañan le damos
  bien , ama vamos con el reto 30 dias
  maña es el dia
  orden y estudio 
+
+ primer dia reto 30
 */
