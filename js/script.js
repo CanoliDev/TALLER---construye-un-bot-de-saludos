@@ -2174,5 +2174,6 @@ mañan le damos
 
  hbd mom
  depurando vacantes a las que puedo postular ahora
- 
+ bien con el remoto
+ ojas en tipo harvar, 
 */
