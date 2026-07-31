@@ -2173,5 +2173,6 @@ mañan le damos
  primer dia reto 30
 
  hbd mom
+ depurando vacantes a las que puedo postular ahora
  
 */
