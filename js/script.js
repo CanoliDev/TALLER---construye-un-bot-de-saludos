@@ -2117,7 +2117,21 @@ value → string con el valor a asignar. Puede ser vacío "".
   */
 }
 
-______________
+
+________________________________________________
+
+onst person = {
+  name: "Alice",
+  age: 30
+};
+
+person.job = "Engineer"
+person["hobby"] = "Knitting"
+console.log(person);  // {name: 'Alice', age: 30, job: 'Engineer', hobby: 'Knitting'}
+}
+------------------------------
+
+______
 /*
 
 ORDEN DE LOS MÓDULOS:
