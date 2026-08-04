@@ -2129,6 +2129,26 @@ person.job = "Engineer"
 person["hobby"] = "Knitting"
 console.log(person);  // {name: 'Alice', age: 30, job: 'Engineer', hobby: 'Knitting'}
 }
+
+const person = {
+  name: "Alice",
+  age: 30
+};
+
+person.job = "Engineer"
+person["hobby"] = "Knitting"
+console.log(person);  // {name: 'Alice', age: 30, job: 'Engineer', hobby: 'Knitting'}
+Eliminar propiedades de un objeto
+Operador delete: Este operador se usa para eliminar una propiedad de un objeto.
+const person = {
+  name: "Alice",
+  age: 30,
+  job: "Engineer"
+};
+
+delete person.job;
+
+console.log(person.job); // undefined
 ------------------------------
 
 ______
