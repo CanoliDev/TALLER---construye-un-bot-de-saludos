@@ -2152,6 +2152,9 @@ console.log(person.job); // undefined
 ------------------------------
 ya casi  tengo los promtp s estoy puliendo , mañad destripo y aplico drivers
  starlink drives, sada
+
+
+ mañan es el dia
 ______
 /*
 
