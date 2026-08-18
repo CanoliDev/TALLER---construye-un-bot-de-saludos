@@ -2156,6 +2156,7 @@ ya casi  tengo los promtp s estoy puliendo , mañad destripo y aplico drivers
 
  mañan es el dia
  evaluacion mañan em
+ hoy 2 aplicaciones, y salida
 ______
 /*
 
