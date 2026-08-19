@@ -2158,6 +2158,23 @@ ya casi  tengo los promtp s estoy puliendo , mañad destripo y aplico drivers
  evaluacion mañan em
  hoy 2 aplicaciones, y salida
 ______
+
+
+
+::::;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+/*hemos vueltooooooooo */     
+const learner = {
+  name: "Nora",
+  age: 45,
+  contact: {
+    email: "nora@email.com",
+    phone: {
+      home: "123-456-7890",
+      work: "098-765-4321"
+    }
+  }
+};
 /*
 
 ORDEN DE LOS MÓDULOS:
