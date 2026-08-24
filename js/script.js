@@ -2159,7 +2159,7 @@ ya casi  tengo los promtp s estoy puliendo , mañad destripo y aplico drivers
  hoy 2 aplicaciones, y salida
 ______
 
-asdf
+mañana
 
 ::::;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
